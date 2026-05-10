@@ -3,7 +3,7 @@ import { io } from 'socket.io-client';
 import { Send, Users, Wifi, Shield, Hash } from 'lucide-react';
 import './Community.css';
 
-const SOCKET_URL = 'http://localhost:5000';
+const SOCKET_URL = 'https://mindfulltalk.onrender.com';
 const USERNAME_KEY = 'community_username';
 const USERNAME_COLOR_KEY = 'community_color';
 

@@ -6,7 +6,7 @@ import { Send, Mic, MicOff, Volume2, VolumeX, PlusCircle, Trash2, Globe, Sparkle
 import axios from 'axios';
 import './Chat.css';
 
-const API = 'http://localhost:5000';
+const API = 'https://mindfulltalk.onrender.com';
 const SESSION_KEY = 'mindfultalk_sessionId';
 
 const Chat = () => {

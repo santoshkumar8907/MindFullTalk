@@ -6,7 +6,7 @@ import { ArrowLeft, Download, Trash2, AlertCircle, FileText, Sparkles } from 'lu
 import axios from 'axios';
 import './Wellness.css';
 
-const API = 'http://localhost:5000';
+const API = 'https://mindfulltalk.onrender.com';
 
 const PlanHistory = () => {
   const { id } = useParams();

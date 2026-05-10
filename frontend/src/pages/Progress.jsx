@@ -281,7 +281,7 @@ const Progress = () => {
     const fetchData = async () => {
       try {
         const config = { headers: { Authorization: `Bearer ${user.token}` } };
-        const { data } = await axios.get('http://localhost:5000/api/analytics/emotions', config);
+        const { data } = await axios.get('https://mindfulltalk.onrender.com/api/analytics/emotions', config);
         setAnalyticsData(data);
       } catch (err) {
         console.error(err);

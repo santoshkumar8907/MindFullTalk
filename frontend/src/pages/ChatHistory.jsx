@@ -20,7 +20,7 @@ const ChatHistory = () => {
     const fetchSession = async () => {
       try {
         const config = { headers: { Authorization: `Bearer ${user.token}` } };
-        const { data } = await axios.get(`http://localhost:5000/api/chat/session/${id}`, config);
+        const { data } = await axios.get(`https://mindfulltalk.onrender.com/api/chat/session/${id}`, config);
         setSession(data);
       } catch (err) {
         showToast("Failed to load chat history", "error");
@@ -35,7 +35,7 @@ const ChatHistory = () => {
     confirm("Delete Entire Chat", "Are you sure you want to delete this full session? This cannot be undone.", async () => {
       try {
         const config = { headers: { Authorization: `Bearer ${user.token}` } };
-        await axios.delete(`http://localhost:5000/api/chat/session/${id}`, config);
+        await axios.delete(`https://mindfulltalk.onrender.com/api/chat/session/${id}`, config);
         showToast("Conversation deleted successfully", "success");
         navigate('/dashboard');
       } catch (err) {
@@ -48,7 +48,7 @@ const ChatHistory = () => {
     confirm("Delete Message", "Remove this message from history?", async () => {
       try {
         const config = { headers: { Authorization: `Bearer ${user.token}` } };
-        const { data } = await axios.delete(`http://localhost:5000/api/chat/message/${id}/${msgId}`, config);
+        const { data } = await axios.delete(`https://mindfulltalk.onrender.com/api/chat/message/${id}/${msgId}`, config);
         if (data.deletedSession) {
           showToast("Session deleted (no messages left)", "info");
           navigate('/dashboard');

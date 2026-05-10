@@ -25,9 +25,9 @@ const Dashboard = () => {
     try {
       const config = { headers: { Authorization: `Bearer ${user.token}` } };
       const [historyRes, profileRes, plansRes] = await Promise.all([
-        axios.get('http://localhost:5000/api/chat/history', config),
-        axios.get('http://localhost:5000/api/auth/profile', config),
-        axios.get('http://localhost:5000/api/plans', config).catch(() => ({ data: [] }))
+        axios.get('https://mindfulltalk.onrender.com/api/chat/history', config),
+        axios.get('https://mindfulltalk.onrender.com/api/auth/profile', config),
+        axios.get('https://mindfulltalk.onrender.com/api/plans', config).catch(() => ({ data: [] }))
       ]);
       setHistory(historyRes.data);
       setProfile(profileRes.data);
@@ -47,7 +47,7 @@ const Dashboard = () => {
     confirm("Delete Conversation", "This will permanently remove this chat and its insights. Are you sure?", async () => {
       try {
         const config = { headers: { Authorization: `Bearer ${user.token}` } };
-        await axios.delete(`http://localhost:5000/api/chat/session/${sessionId}`, config);
+        await axios.delete(`https://mindfulltalk.onrender.com/api/chat/session/${sessionId}`, config);
         setHistory(prev => prev.filter(s => s._id !== sessionId));
         showToast("Conversation deleted successfully", "success");
       } catch (err) {

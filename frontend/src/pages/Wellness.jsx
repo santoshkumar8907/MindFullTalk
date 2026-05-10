@@ -5,7 +5,7 @@ import { Download, Sparkles, AlertCircle, FileText } from 'lucide-react';
 import axios from 'axios';
 import './Wellness.css';
 
-const API = 'http://localhost:5000';
+const API = 'https://mindfulltalk.onrender.com';
 
 const Wellness = () => {
   const { user } = useContext(AuthContext);
